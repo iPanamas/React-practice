@@ -26,9 +26,13 @@ ul {
   padding: 0;
 }
 
-li{
-  list-style-type: none;
+p{
+  margin: 0;
 }
+
+/* li{
+  list-style-type: none;
+} */
 
 /* .box.big{
   width: 200px;

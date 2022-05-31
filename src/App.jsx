@@ -1,3 +1,5 @@
+import React, { Component } from 'react';
+
 // ============================= Leson-1 Componenst and style.
 // import PaintingList from "./components/Module-1 Components and style/Painting/PaintingList";
 // import Section from './components/Section'
@@ -12,7 +14,7 @@ import Container from './components/Module-1 Components and style/Container/Cont
 // import Dropdown from './Module-2 Events, state. Forms/Dropdown/Dropdown';
 // import ColorPicker from './components/Module-2 Events, state. Forms/ColorPicker/ColorPicker';
 import ToDoList from './components/Module-2 Events, state. Forms/ToDoList/ToDoList';
-
+import initialTodos from './components/Module-2 Events, state. Forms/ToDoList/todos.json';
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
 //   { label: 'green', color: '#4CAF50' },
@@ -22,26 +24,53 @@ import ToDoList from './components/Module-2 Events, state. Forms/ToDoList/ToDoLi
 //   { label: 'indigo', color: '#3F51B5' },
 // ];
 
-export default function App() {
-  return (
-    <Container>
-      {/* Lesson-1 */}
-      {/* <PaintingList items={paintings}/> */}
-      {/* <ColorPicker options={colorPickerOptions} /> */}
+class App extends Component {
+  state = {
+    todos: initialTodos,
+  };
 
-      {/* <Alert text='This is alert' type="success"/>
+  deleteTodo = todoId => {
+    this.setState(prevState => ({
+      todos: prevState.todos.filter(todo => todo.id !== todoId),
+    }));
+  };
+
+  render() {
+    const { todos } = this.state;
+    const totalTodoCound = todos.length;
+
+    const completedTodoCount = todos.reduce(
+      (acc, todo) => (todo.completed ? acc + 1 : acc),
+      0,
+    );
+
+    return (
+      <>
+        {/* Lesson-1 */}
+        {/* <PaintingList items={paintings}/> */}
+        {/* <ColorPicker options={colorPickerOptions} /> */}
+
+        {/* <Alert text='This is alert' type="success"/>
             <Alert text='This is alert' type="warning"/>
             <Alert text='This is alert' type="error" /> */}
 
-      {/* <Box type='small' classNames="big red" styles={{color: '#ffffff'}}/>
+        {/* <Box type='small' classNames="big red" styles={{color: '#ffffff'}}/>
             <Box type='medium'/>
             <Box type='large'/> */}
 
-      {/* Lesson-2 */}
-      {/* <Counter initialValue={10}/> */}
-      {/* <Dropdown/> */}
-      {/* <ColorPicker options={colorPickerOptions} /> */}
-      <ToDoList />
-    </Container>
-  );
+        {/* Lesson-2 */}
+        {/* <Counter initialValue={10}/> */}
+        {/* <Dropdown/> */}
+        {/* <ColorPicker options={colorPickerOptions} /> */}
+
+        <div>
+          <p>Общее количество: {totalTodoCound}</p>
+          <p>Количество выполненых: {completedTodoCount}</p>
+        </div>
+        <ToDoList todos={todos} onDeleteTodo={this.deleteTodo} />
+      </>
+    );
+  }
 }
+
+export default App;
