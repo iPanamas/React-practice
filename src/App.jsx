@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 // import ColorPicker from "./components/ColorPicker/ColorPicker";
 // import Alert from "./components/Alert/Alert";
 // import Box from './components/Module-1 Components and style/Box/Box';
-import Container from './components/Module-1 Components and style/Container/Container';
+// import Container from './components/Module-1 Components and style/Container/Container';
 
 // ============================= Leson-2 Events, module. Forms.
 // import Counter from './components/Module-2 Events, state. Forms/Counter/Counter'
