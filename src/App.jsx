@@ -15,7 +15,8 @@ import Counter from './components/Module-2 Events, state. Forms/Counter/Counter'
 // import ColorPicker from './components/Module-2 Events, state. Forms/ColorPicker/ColorPicker';
 // import ToDoList from './components/Module-2 Events, state. Forms/ToDoList/ToDoList';
 // import initialTodos from './components/Module-2 Events, state. Forms/ToDoList/todos.json';
-
+// import LoginForm from './components/Module-2 Events, state. Forms/Form/LoginForm';
+import SignUpForm from './components/Module-2 Events, state. Forms/SignUpForm/SignUpForm';
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
 //   { label: 'green', color: '#4CAF50' },
@@ -60,7 +61,7 @@ class App extends Component {
             <Box type='large'/> */}
 
         {/* Lesson-2 */}
-        <Counter initialValue={0} />
+        {/* <Counter initialValue={0} /> */}
         {/* <Dropdown/> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
         {/* <div>
@@ -68,6 +69,8 @@ class App extends Component {
           <p>Количество выполненых: {completedTodoCount}</p>
         </div>
         <ToDoList todos={todos} onDeleteTodo={this.deleteTodo} /> */}
+        {/* <LoginForm onSubmit={values => console.log(values)} /> */}
+        <SignUpForm onSubmit={values => console.log(values)} />
       </>
     );
   }
