@@ -5,8 +5,12 @@ import Value from './value';
 
 class Counter extends React.Component {
   static defaultProps = {
-    initialValue: 5,
+    initialValue: 0,
   };
+
+  // static propTypes = {
+
+  // }
 
   state = {
     value: this.props.initialValue,

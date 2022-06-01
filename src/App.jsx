@@ -10,11 +10,12 @@ import React, { Component } from 'react';
 // import Container from './components/Module-1 Components and style/Container/Container';
 
 // ============================= Leson-2 Events, module. Forms.
-// import Counter from './components/Module-2 Events, state. Forms/Counter/Counter'
+import Counter from './components/Module-2 Events, state. Forms/Counter/Counter';
 // import Dropdown from './Module-2 Events, state. Forms/Dropdown/Dropdown';
 // import ColorPicker from './components/Module-2 Events, state. Forms/ColorPicker/ColorPicker';
-import ToDoList from './components/Module-2 Events, state. Forms/ToDoList/ToDoList';
-import initialTodos from './components/Module-2 Events, state. Forms/ToDoList/todos.json';
+// import ToDoList from './components/Module-2 Events, state. Forms/ToDoList/ToDoList';
+// import initialTodos from './components/Module-2 Events, state. Forms/ToDoList/todos.json';
+
 // const colorPickerOptions = [
 //   { label: 'red', color: '#F44336' },
 //   { label: 'green', color: '#4CAF50' },
@@ -25,24 +26,24 @@ import initialTodos from './components/Module-2 Events, state. Forms/ToDoList/to
 // ];
 
 class App extends Component {
-  state = {
-    todos: initialTodos,
-  };
+  // state = {
+  //   todos: initialTodos,
+  // };
 
-  deleteTodo = todoId => {
-    this.setState(prevState => ({
-      todos: prevState.todos.filter(todo => todo.id !== todoId),
-    }));
-  };
+  // deleteTodo = todoId => {
+  //   this.setState(prevState => ({
+  //     todos: prevState.todos.filter(todo => todo.id !== todoId),
+  //   }));
+  // };
 
   render() {
-    const { todos } = this.state;
-    const totalTodoCound = todos.length;
+    // const { todos } = this.state;
+    // const totalTodoCound = todos.length;
 
-    const completedTodoCount = todos.reduce(
-      (acc, todo) => (todo.completed ? acc + 1 : acc),
-      0,
-    );
+    // const completedTodoCount = todos.reduce(
+    //   (acc, todo) => (todo.completed ? acc + 1 : acc),
+    //   0,
+    // );
 
     return (
       <>
@@ -59,15 +60,14 @@ class App extends Component {
             <Box type='large'/> */}
 
         {/* Lesson-2 */}
-        {/* <Counter initialValue={10}/> */}
+        <Counter initialValue={0} />
         {/* <Dropdown/> */}
         {/* <ColorPicker options={colorPickerOptions} /> */}
-
-        <div>
+        {/* <div>
           <p>Общее количество: {totalTodoCound}</p>
           <p>Количество выполненых: {completedTodoCount}</p>
         </div>
-        <ToDoList todos={todos} onDeleteTodo={this.deleteTodo} />
+        <ToDoList todos={todos} onDeleteTodo={this.deleteTodo} /> */}
       </>
     );
   }
