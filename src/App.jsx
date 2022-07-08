@@ -1,11 +1,11 @@
-import { createStore } from 'redux';
+import Counter from './components/Counter';
 
 const App = () => {
-  const reducer = (state = {}, action) => state;
-
-  const store = createStore(reducer);
-
-  return <></>;
+  return (
+    <>
+      <Counter />
+    </>
+  );
 };
 
 export default App;
